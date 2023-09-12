@@ -26,21 +26,22 @@ class MemoManager {
     }
     
     func getCompletedMemos() -> [Memo] {
-            return completedMemos
-        }
+        return completedMemos
+    }
     
     func toggleMemoCompletion(at index: Int) {
-            if index >= 0 && index < memos.count {
-                memos[index].isCompleted.toggle()
-                
-                // 메모가 완료 상태인지 확인하여 completedMemos 배열에 추가 또는 제거
-                if memos[index].isCompleted {
-                    completedMemos.append(memos[index])
-                } else {
-                    if let indexInCompleted = completedMemos.firstIndex(where: { $0.id == memos[index].id }) {
-                        completedMemos.remove(at: indexInCompleted)
-                    }
+        if index >= 0 && index < memos.count {
+            memos[index].isCompleted.toggle()
+            
+            // 메모가 완료 상태인지 확인하여 completedMemos 배열에 추가 또는 제거
+            if memos[index].isCompleted {
+                completedMemos.append(memos[index])
+            } else {
+                if let indexInCompleted = completedMemos.firstIndex(where: { $0.id == memos[index].id }) {
+                    completedMemos.remove(at: indexInCompleted)
                 }
             }
         }
+    }
+    
 }

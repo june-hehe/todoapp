@@ -12,11 +12,10 @@ class Memo {
     var content: String
     var date: Date
     var isCompleted: Bool // 새로 추가한 필드
-
     
     init(content: String) {
-        self.id = UUID().uuidString // 고유한 ID 생성
         self.content = content
+        self.id = UUID().uuidString // 고유한 ID 생성
         self.date = Date() // 현재 시간으로 초기화
         self.isCompleted = false // 초기값으로 미완료 상태로 설정
     }

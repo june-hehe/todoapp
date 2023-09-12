@@ -25,7 +25,7 @@ class MemoViewController: UIViewController {
         view.backgroundColor = .white
 
         // 네비게이션 바 설정
-        navigationItem.title = "메모"
+        navigationItem.title = "작성하기"
         
         // 저장 버튼 추가
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonTapped))

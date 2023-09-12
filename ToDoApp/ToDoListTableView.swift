@@ -10,8 +10,8 @@ import UIKit
 class ToDoListTableView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView = UITableView()
-    var navigationBar = UINavigationBar()
     var contentList = MemoManager.shared
+    var navigationBar = UINavigationBar()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,8 +28,8 @@ class ToDoListTableView: UIViewController, UITableViewDelegate, UITableViewDataS
         
         view.backgroundColor = .white
         
-        navigationItem.title = "ToDoList"
-        navigationItem.setRightBarButton(UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(onClickAddButton(_:))), animated: false)
+        navigationItem.title = "할일"
+        navigationItem.setRightBarButton(UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(onClickAddButton(_:))), animated: false)
         
         // UITableView 생성
         tableView.delegate = self
@@ -69,7 +69,7 @@ class ToDoListTableView: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.textLabel?.text = memo.content
             // 메모 시간 표시 (Date를 문자열로 변환)
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH시 mm분" // 원하는 날짜 형식을 설정하세요
+            dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH시 mm분" // 원하는 날짜 형식을 설정
             let dateString = dateFormatter.string(from: memo.date)
             // 시간을 detailTextLabel에 표시
             cell.detailTextLabel?.text = dateString
