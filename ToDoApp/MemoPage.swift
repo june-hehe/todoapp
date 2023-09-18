@@ -60,7 +60,7 @@ class MemoViewController: UIViewController {
         // MemoManager를 사용하여 메모를 저장
         MemoManager.shared.addMemo(memo)
         
-        // 저장된 메모 목록을 출력합니다. (테스트용)
+        // 저장된 메모 목록을 출력 (테스트용)
         let savedMemos = MemoManager.shared.getMemos()
         print("저장된 메모 목록: \(savedMemos)")
         

@@ -111,7 +111,7 @@ class ToDoListTableView: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     @objc private func switchValueChanged(_ sender: UISwitch) {
-        let row = sender.tag // 스위치에 대한 행을 가져옵니다.
+        let row = sender.tag // 스위치에 대한 행을 가져옴
 
             // 메모의 완료 상태만 토글
             contentList.toggleMemoCompletion(at: row)
