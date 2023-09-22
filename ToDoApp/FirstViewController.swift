@@ -17,9 +17,22 @@ class FirstViewController: UIViewController {
         // 이미지뷰 생성 및 설정
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "memoImage") // 실제 이미지 파일 이름으로 변경
+//        imageView.image = UIImage(named: "memoImage") // 실제 이미지 파일 이름으로 변경
         imageView.contentMode = .scaleAspectFit
         view.addSubview(imageView)
+        
+        // 비동기적으로 이미지 다운로드
+                DispatchQueue.global(qos: .userInitiated).async {
+                    if let imageUrl = URL(string: "https://spartacodingclub.kr/css/images/scc-og.jpg"),
+                       let imageData = try? Data(contentsOf: imageUrl),
+                       let image = UIImage(data: imageData) {
+                        
+                        // UI 업데이트는 메인 스레드에서 수행
+                        DispatchQueue.main.async {
+                            imageView.image = image
+                        }
+                    }
+                }
         
         // 버튼 1 생성
         let button1 = UIButton(type: .system)
