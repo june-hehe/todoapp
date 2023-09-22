@@ -117,12 +117,12 @@ class FirstViewController: UIViewController {
     
     // 버튼 4 동작 함수
     @objc func button4Tapped() {
-        // ProfileViewController 뷰 컨트롤러 인스턴스 생성
-        let profileViewController = ProfileViewController()
+        // ProfileDesignViewController 뷰 컨트롤러 인스턴스 생성
+        let ProfileDesignViewController = ProfileDesignViewController()
         
-        // ProfileViewController를 네비게이션 컨트롤러가 아닌 현재 뷰 컨트롤러에서 present
-        profileViewController.modalPresentationStyle = .fullScreen
-        present(profileViewController, animated: true, completion: nil)
+        // ProfileDesignViewController를 네비게이션 컨트롤러가 아닌 현재 뷰 컨트롤러에서 present
+        ProfileDesignViewController.modalPresentationStyle = .fullScreen
+        present(ProfileDesignViewController, animated: true, completion: nil)
     }
 
 }
